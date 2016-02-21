@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DrawTalk</string>
+    <string name="topic">Topic</string>
+    <string name="topicHint">Type your topic</string>
+    <string name="description">Description</string>
+    <string name="descriptionHint">type description</string>
+    <string name="btnAdd">Add</string>
+    <string name="hintPart">Type your part</string>
+    <string name="amountParts">Amount of parts</string>
+</resources>
