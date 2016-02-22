@@ -73,7 +73,7 @@
         android:orientation="vertical"
         android:id="@+id/rlPie">
 
-        <nl.saxion.ap.drawtalk.model.PieView
+        <nl.saxion.ap.drawtalk.view.PieView
             android:id="@+id/pvPie"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -1,4 +1,4 @@
-package nl.saxion.ap.drawtalk.model;
+package nl.saxion.ap.drawtalk.view;
 
 import android.content.Context;
 import android.graphics.BlurMaskFilter;
@@ -14,10 +14,8 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 
 import nl.saxion.ap.drawtalk.R;
+import nl.saxion.ap.drawtalk.model.PiePart;
 
-/**
- * Created by ear01 on 18/02/16.
- */
 public class PieView extends LinearLayout {
 
     private ArrayList<PiePart> parts;
@@ -30,8 +28,8 @@ public class PieView extends LinearLayout {
     private int mTextColor;
     private float mTextWidth = 0.0f;
     private float mTextHeight = 0.0f;
-    private RectF mBounds;
     private float diameter;
+    private RectF mBounds;
 
     public PieView(Context context) {
         super(context);
@@ -55,11 +53,11 @@ public class PieView extends LinearLayout {
         diameter = canvas.getWidth();
 
         float startAngle = 0f;
-        float endAngle = 0f;
+        float endAngle;
 
         // draw circle
         canvas.drawCircle(diameter / 2, diameter / 2, diameter / 2, mPieBackground);
-        Log.d("onDraw", "Cirkel : " + canvas.getHeight() + " x " + canvas.getHeight());
+        Log.d("onDraw", "Circle : " + canvas.getHeight() + " x " + canvas.getHeight());
 
         int partNumber = 0;
         int[] locationX = {400,150,75,350};
@@ -78,16 +76,7 @@ public class PieView extends LinearLayout {
                     true, paints.get(parts.indexOf(pp)));
             startAngle = endAngle;
 
-//            int textWidth = 50;
-//            int x = (int) diameter /4 / partNumber+1;
-//            int y = (int) diameter /4 / partNumber+1;
-//            x = x + (int) startAngle / (2 * (int) Math.PI * (int) diameter);
-//            y = y - (int) startAngle / (2 * (int) Math.PI * (int) diameter);
-//            Log.d("onDraw",pp.getTopic());
-//            Log.d("onDraw","X=" + x);
-//            Log.d("onDraw","Y=" + y);
-
-            canvas.drawText(pp.getTopic(),locationX[partNumber], locationY[partNumber], mTextPaint);
+            canvas.drawText(pp.getTopic(),locationX[partNumber%locationX.length], locationY[partNumber%locationY.length], mTextPaint);
             partNumber++;
 
         }
