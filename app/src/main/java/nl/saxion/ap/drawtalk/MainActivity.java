@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         colors.add(Color.MAGENTA);
 
         // init pieParts
-        PiePart pie1 = new PiePart("NOUN",25,Color.RED);
+        PiePart pie1 = new PiePart("NOUNS",25,Color.RED);
         PiePart pie2 = new PiePart("VERB",25,Color.YELLOW);
         PiePart pie3 = new PiePart("EMOTION",25,Color.GREEN);
         PiePart pie4 = new PiePart("ADJECTIVE",25,Color.BLUE);
